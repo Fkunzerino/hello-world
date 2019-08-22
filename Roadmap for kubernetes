@@ -1,0 +1,26 @@
+1) Aprender docker
+     *Levantar un contenedor
+        -Aprender como operan los contenedores
+        -Entender como funciona las ip externas y las ip internas del contenedor
+        -Aprender lo que es un Dockerfile, docker image y contenedor
+        -Incluir mas cosas en el levantamiento de contenedores, como la asiganción de puertos (-p 80:80)
+        -Aprender los requerimientos de cada imagen (mysql --> ROOT_PASS, etc),(myadmin --> PMA_HOST)
+     *Levantar dos o mas contenedores y conectarlos usando network
+        -Aprender lo que es network, como opera y porque reemplaza a la asiganción de puertos manual
+        -Usar aplicaciones que interactuen entre sí (phpmyadmin --> mysql)
+
+2) Aprender docker compose
+     *Entender como funciona docker compose
+     *Levantar los mismos contenedores vistos antes con docker-compose
+
+3) Aprender kubernetes
+     *Aprender con videos cortos como funciona kubernetes
+        -Que son los: Pods, Workers, kubelet, nodos, cluster y como interactuan entre si
+     *Aprender de manera basica los metodos que tiene kubernetes
+        -Aprender lo que es y lanzar un Pod (nginx welcome)
+        -Aprender lo que es y lanzar un deploy simple con al menos 3 replicas
+        -Aprender lo que son SERVICES, lanzar uno para conectarse a un conjunto de pod
+        -Ver como services puede conectar contenedores entre si (phpmyadmin --> mysql --> web)
+     *Aprender a hacer imagenes docker propias
+        -poseer cuentas docker hub y github
+        
