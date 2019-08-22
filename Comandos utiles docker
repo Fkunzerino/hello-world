@@ -1,0 +1,67 @@
+
+*********************************LISTA TOTAL DE COMANDOS PARA LINUX - FRANCISCO KUNZ S.**********************************
+
+########################## subida contenedores ###############################
+subida de contenedores:
+
+contenedor web de la prueba sql:
+sudo docker run -d -p 5000:80 --name web-sql --net=troll-net -v "$PWD"/website-sql:/var/www/html/ web-sql 
+
+php my admin:
+sudo docker run --net=troll-net --name myadmin -e PMA_HOST=mysql -p 8080:80  -d phpmyadmin/phpmyadmin
+
+mysql:
+sudo docker run -d -p 3306:3306 --net=troll-net --name mysql -v troll-data:/var/lib/mysq -e MYSQL_ROOT_PASSWORD=asd mysql:5.7
+
+sudo docker run -d -p 3306:3306 --net=sql-test2_backend --name mysql -v data:/var/lib/mysq -e MYSQL_ROOT_PASSWORD=asd mysql:5.7
+############################## subida contenedores #########################
+----------------------------------------------------------------------------
+################################### Ip equipo ##############################
+IP del equipo:
+
+192.168.43.255
+################################### Ip equipo ##############################
+----------------------------------------------------------------------------
+############################## network connections #########################
+Checkear:
+sudo netstat -nlpt
+
+Borrar coneccion:
+sudo service mysql stop
+############################## network connections #########################
+----------------------------------------------------------------------------
+################################### workbench ##############################
+abrir:
+
+mysql-workbench
+################################### workbench ##############################
+----------------------------------------------------------------------------
+###################################  B-Wapp  ###############################
+run:
+sudo docker run -d --name bwapp -p 80:80 raesene/bwapp
+
+then port foward --> /install.php
+###################################  B-Wapp  ###############################
+----------------------------------------------------------------------------
+#################################### vs code ###############################
+abrir:
+
+code
+#################################### vs code ###############################
+----------------------------------------------------------------------------
+################################# Docker-compose ###########################
+sudo docker compose up -d
+sudo docker-compose inspect
+sudo docker compose down
+################################# Docker-compose ###########################
+
+
+
+
+
+
+
+
+
+
+
