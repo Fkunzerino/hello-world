@@ -1,8 +1,8 @@
 
-*********************************LISTA TOTAL DE COMANDOS PARA LINUX - FRANCISCO KUNZ S.**********************************
+*********************************LISTOF COMMANDS FOR LINUX - FRANCISCO KUNZ S.**********************************
 
-########################## subida contenedores ###############################
-subida de contenedores:
+########################## Container run ###############################
+running commands (pull images first):
 
 contenedor web de la prueba sql:
 sudo docker run -d -p 5000:80 --name web-sql --net=troll-net -v "$PWD"/website-sql:/var/www/html/ web-sql 
@@ -16,38 +16,42 @@ sudo docker run -d -p 3306:3306 --net=troll-net --name mysql -v troll-data:/var/
 sudo docker run -d -p 3306:3306 --net=sql-test2_backend --name mysql -v data:/var/lib/mysq -e MYSQL_ROOT_PASSWORD=asd mysql:5.7
 ############################## subida contenedores #########################
 ----------------------------------------------------------------------------
-################################### Ip equipo ##############################
-IP del equipo:
-
-192.168.43.255
-################################### Ip equipo ##############################
-----------------------------------------------------------------------------
 ############################## network connections #########################
-Checkear:
+Check:
 sudo netstat -nlpt
 
-Borrar coneccion:
+Erase mysql (this is only if the computers mysql is interfering by using the port 3306):
 sudo service mysql stop
 ############################## network connections #########################
 ----------------------------------------------------------------------------
 ################################### workbench ##############################
-abrir:
+Pull:
+sudo apt install mysql-workbench
 
+Open:
 mysql-workbench
 ################################### workbench ##############################
 ----------------------------------------------------------------------------
 ###################################  B-Wapp  ###############################
-run:
-sudo docker run -d --name bwapp -p 80:80 raesene/bwapp
+Pull:
+sudo docker pull raesene/bwapp
 
-then port foward --> /install.php
+Run:
+sudo docker run -d --name bwapp -p 80:80 raesene/bwapp
+Then port foward --> /install.php
 ###################################  B-Wapp  ###############################
 ----------------------------------------------------------------------------
-#################################### vs code ###############################
-abrir:
+############################# Visual studio code ###########################
+Installing:
+sudo apt update
+sudo apt install software-properties-common apt-transport-https wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add 
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt install code
 
+Open:
 code
-#################################### vs code ###############################
+############################# Visual studio code ###########################
 ----------------------------------------------------------------------------
 ################################# Docker-compose ###########################
 sudo docker compose up -d
